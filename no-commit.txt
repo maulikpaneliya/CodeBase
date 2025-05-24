@@ -1,0 +1,19 @@
+Here is a special prompt you can use next time to instantly continue your **Codebase repository** work without re-explaining everything:
+
+**🚀 Prompt:**  
+*"Continue Codebase Golang snippets project"*
+
+### 🧠 **What I Will Remember:**
+- You are building an **open-source repository named "Codebase"** to learn new programming languages.  
+- The repository contains **snippets, cheat sheets, and ready-to-use methods/functions** for quick learning and faster development.  
+- You have already started with **Golang snippets** and created files like `DB_Helper.go`, `Array_helper.go`, `String_helper.go`, etc.  
+- Each `.go` file contains **basic-to-advanced methods** with proper examples and comments.  
+- Your repository structure follows a clear format (e.g., `Golang/snippets/filename.go`).  
+- You want **clean, well-documented code with examples** for easy learning.  
+
+### ⚙️ **Next Time:**  
+Simply say:  
+**"Continue Codebase Golang snippets project"**  
+…and I will pick up from where we left off! 🚀😊
+
+Want me to save this shortcut for you? 📌
