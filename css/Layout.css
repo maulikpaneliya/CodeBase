@@ -1,0 +1,306 @@
+/* CSS Layout Guide
+ * This file demonstrates various CSS layout techniques and properties
+ */
+
+/* 1. Display Property
+-------------------------------------------- */
+
+/* Block Elements */
+.block {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Inline Elements */
+.inline {
+    display: inline;
+    margin: 0 5px;
+}
+
+/* Inline-Block Elements */
+.inline-block {
+    display: inline-block;
+    width: 150px;
+    margin: 5px;
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* 2. Position Property
+-------------------------------------------- */
+
+/* Static (Default) */
+.static {
+    position: static;
+    /* No effect from top, right, bottom, left */
+}
+
+/* Relative */
+.relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    /* Offset from normal position */
+}
+
+/* Absolute */
+.absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Positioned relative to nearest positioned ancestor */
+}
+
+/* Fixed */
+.fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /* Positioned relative to viewport */
+}
+
+/* Sticky */
+.sticky {
+    position: sticky;
+    top: 0;
+    /* Sticks when scrolling reaches its position */
+    background: white;
+    z-index: 100;
+}
+
+/* 3. Float Property
+-------------------------------------------- */
+
+/* Basic Float */
+.float-left {
+    float: left;
+    margin-right: 15px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 15px;
+}
+
+/* Clear Fix */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 4. Z-Index and Stacking Context
+-------------------------------------------- */
+
+.stack-context {
+    position: relative;
+}
+
+.layer-1 {
+    position: relative;
+    z-index: 1;
+}
+
+.layer-2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* 5. Common Layout Patterns
+-------------------------------------------- */
+
+/* Basic Two-Column Layout */
+.two-column {
+    overflow: hidden; /* Clearfix */
+}
+
+.sidebar {
+    float: left;
+    width: 25%;
+    padding: 20px;
+}
+
+.main-content {
+    float: left;
+    width: 75%;
+    padding: 20px;
+}
+
+/* Three Column Layout */
+.three-column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+/* Holy Grail Layout */
+.holy-grail {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.holy-grail-header {
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+.holy-grail-body {
+    display: flex;
+    flex: 1;
+}
+
+.holy-grail-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.holy-grail-nav {
+    width: 200px;
+    padding: 20px;
+    order: -1;
+}
+
+.holy-grail-ads {
+    width: 200px;
+    padding: 20px;
+}
+
+.holy-grail-footer {
+    padding: 20px;
+    background: #f8f9fa;
+}
+
+/* 6. Centering Techniques
+-------------------------------------------- */
+
+/* Horizontal Centering */
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+/* Vertical Centering (Modern) */
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Absolute Centering */
+.center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 7. Responsive Layout Patterns
+-------------------------------------------- */
+
+/* Mobile First Container */
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Responsive Grid */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.grid-item {
+    flex: 0 0 100%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .grid-item {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-item {
+        flex: 0 0 33.333%;
+    }
+}
+
+/* 8. Best Practices
+-------------------------------------------- */
+
+/* Use Modern Layout Methods */
+.modern-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Avoid Fixed Heights */
+.flexible-height {
+    min-height: 200px;
+    height: auto;
+}
+
+/* Maintain Content Flow */
+.content-flow > * + * {
+    margin-top: 1em;
+}
+
+/* Example HTML Reference:
+
+<div class="container">
+    <header class="holy-grail-header">Header</header>
+    
+    <div class="holy-grail-body">
+        <main class="holy-grail-content">
+            <div class="grid">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+            </div>
+        </main>
+        
+        <nav class="holy-grail-nav">Navigation</nav>
+        <aside class="holy-grail-ads">Sidebar</aside>
+    </div>
+    
+    <footer class="holy-grail-footer">Footer</footer>
+</div>
+
+*/

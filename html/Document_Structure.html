@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Document Structure Guide</title>
+    <!-- This file demonstrates proper HTML document structure and commonly used elements -->
+</head>
+<body>
+
+<!-- 1. Basic Document Structure -->
+<!--
+The minimal valid HTML5 document structure:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+</head>
+<body>
+    Content goes here
+</body>
+</html>
+-->
+
+<!-- 2. Head Section Elements -->
+<div class="section">
+    <h2>Head Section Elements</h2>
+    <!-- 
+    Common head elements:
+    <meta> - Document metadata
+    <title> - Page title
+    <link> - External resources
+    <style> - Internal CSS
+    <script> - JavaScript
+    <base> - Base URL for relative URLs
+    -->
+
+    <!-- Meta Tags Examples -->
+    <!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page description">
+    <meta name="keywords" content="keywords, separated, by, commas">
+    <meta name="author" content="Author Name">
+    <meta name="robots" content="index, follow">
+    -->
+
+    <!-- External Resource Links -->
+    <!--
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    -->
+
+    <!-- Script Loading -->
+    <!--
+    <script src="script.js"></script>
+    <script src="async-script.js" async></script>
+    <script src="defer-script.js" defer></script>
+    -->
+</div>
+
+<!-- 3. Body Section Organization -->
+<div class="section">
+    <h2>Body Section Organization</h2>
+    
+    <!-- Header Area -->
+    <header>
+        <h1>Site Title</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <article>
+            <h2>Article Title</h2>
+            <section>
+                <h3>Section Heading</h3>
+                <p>Section content goes here.</p>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Complementary content goes here.</p>
+        </aside>
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2025 Website Name. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- 4. Character References -->
+<div class="section">
+    <h2>Character References</h2>
+    <!-- 
+    Common HTML entities:
+    &lt; - Less than (<)
+    &gt; - Greater than (>)
+    &amp; - Ampersand (&)
+    &quot; - Double quote (")
+    &apos; - Single quote (')
+    &copy; - Copyright symbol (©)
+    &reg; - Registered trademark (®)
+    &trade; - Trademark (™)
+    -->
+</div>
+
+<!-- 5. Comments and Documentation -->
+<div class="section">
+    <h2>Comments and Documentation</h2>
+    <!-- Single line comment -->
+    
+    <!-- 
+        Multi-line
+        comment
+        block
+    -->
+    
+    <!--[if IE]>
+        Special instructions for Internet Explorer
+    <![endif]-->
+</div>
+
+<!-- 6. Best Practices -->
+<div class="section">
+    <h2>Best Practices</h2>
+    
+    <!-- Language Declaration -->
+    <!-- Always specify language: <html lang="en"> -->
+    
+    <!-- Character Encoding -->
+    <!-- Always specify charset: <meta charset="UTF-8"> -->
+    
+    <!-- Viewport Settings -->
+    <!-- 
+    Include viewport meta for responsive design:
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    
+    <!-- Resource Loading -->
+    <!-- 
+    CSS in head, JS before </body>
+    Use async/defer for scripts when possible
+    -->
+</div>
+
+<!-- 7. Common Patterns -->
+<div class="section">
+    <h2>Common Document Patterns</h2>
+    
+    <!-- Single Page Application Structure -->
+    <div id="app">
+        <header></header>
+        <main>
+            <div id="router-view"></div>
+        </main>
+        <footer></footer>
+    </div>
+    
+    <!-- Blog Post Structure -->
+    <article>
+        <header>
+            <h1>Blog Post Title</h1>
+            <time datetime="2025-08-15">August 15, 2025</time>
+        </header>
+        
+        <section class="content">
+            <!-- Post content -->
+        </section>
+        
+        <footer>
+            <div class="author-bio"></div>
+            <div class="social-share"></div>
+        </footer>
+    </article>
+    
+    <!-- E-commerce Product Page -->
+    <main class="product-page">
+        <div class="product-gallery"></div>
+        <div class="product-info"></div>
+        <div class="product-tabs"></div>
+    </main>
+</div>
+
+<!-- 8. Accessibility Considerations -->
+<div class="section">
+    <h2>Accessibility Considerations</h2>
+    
+    <!-- Language -->
+    <!-- Use proper lang attribute -->
+    <div lang="es">Contenido en español</div>
+    
+    <!-- ARIA roles -->
+    <div role="alert">Important notification</div>
+    
+    <!-- Skip Navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Semantic Structure -->
+    <!-- Use semantic elements like header, nav, main, article, section, aside, footer -->
+</div>
+
+<!-- 9. SEO Optimization -->
+<div class="section">
+    <h2>SEO Optimization</h2>
+    
+    <!-- Meta Description -->
+    <!-- 
+    <meta name="description" content="Clear, unique page description">
+    -->
+    
+    <!-- Heading Hierarchy -->
+    <!-- Maintain proper h1-h6 structure -->
+    
+    <!-- Structured Data -->
+    <!-- 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Page Title"
+    }
+    </script>
+    -->
+</div>
+
+</body>
+</html>

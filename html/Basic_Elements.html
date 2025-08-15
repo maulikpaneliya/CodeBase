@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basic Elements Guide</title>
+</head>
+<body>
+
+<!-- 1. Text Elements -->
+<div class="section">
+    <h2>Text Elements</h2>
+
+    <!-- Headings -->
+    <h1>Heading Level 1</h1>
+    <h2>Heading Level 2</h2>
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+
+    <!-- Paragraphs -->
+    <p>This is a simple paragraph. It can contain text and other inline elements.</p>
+    <p>Paragraphs can have multiple lines
+       and will maintain their spacing.</p>
+
+    <!-- Text Formatting -->
+    <p>
+        <strong>Bold text</strong> and <em>italic text</em><br>
+        <mark>Highlighted text</mark> and <del>deleted text</del><br>
+        <ins>Inserted text</ins> and <sub>subscript</sub> and <sup>superscript</sup>
+    </p>
+
+    <!-- Pre-formatted Text -->
+    <pre>
+This text maintains
+    its formatting
+        and spacing
+    exactly as written.
+    </pre>
+
+    <!-- Code -->
+    <code>console.log("Hello, World!");</code>
+</div>
+
+<!-- 2. Lists -->
+<div class="section">
+    <h2>Lists</h2>
+
+    <!-- Unordered List -->
+    <h3>Unordered List</h3>
+    <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item
+            <ul>
+                <li>Nested item 1</li>
+                <li>Nested item 2</li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- Ordered List -->
+    <h3>Ordered List</h3>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item
+            <ol type="a">
+                <li>Sub-item a</li>
+                <li>Sub-item b</li>
+            </ol>
+        </li>
+    </ol>
+
+    <!-- Description List -->
+    <h3>Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language - the standard markup language for web pages.</dd>
+        
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets - used for describing the presentation of HTML documents.</dd>
+    </dl>
+</div>
+
+<!-- 3. Links -->
+<div class="section">
+    <h2>Links</h2>
+
+    <!-- Basic Links -->
+    <p><a href="https://www.example.com">External link</a></p>
+    <p><a href="/about">Internal link</a></p>
+    <p><a href="#section">Link to page section</a></p>
+    <p><a href="mailto:example@email.com">Email link</a></p>
+    <p><a href="tel:+1234567890">Phone link</a></p>
+
+    <!-- Link with Image -->
+    <a href="https://www.example.com">
+        <img src="example.jpg" alt="Example image link">
+    </a>
+
+    <!-- Link Attributes -->
+    <p><a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
+        Open in new tab
+    </a></p>
+</div>
+
+<!-- 4. Images -->
+<div class="section">
+    <h2>Images</h2>
+
+    <!-- Basic Image -->
+    <img src="example.jpg" alt="A descriptive text about the image">
+
+    <!-- Image with Size -->
+    <img src="example.jpg" alt="Sized image" width="300" height="200">
+
+    <!-- Responsive Image -->
+    <img src="example.jpg" alt="Responsive image" srcset="example-small.jpg 300w,
+                                                         example-medium.jpg 600w,
+                                                         example-large.jpg 900w"
+                                                  sizes="(max-width: 320px) 280px,
+                                                         (max-width: 640px) 580px,
+                                                         880px">
+
+    <!-- Figure with Caption -->
+    <figure>
+        <img src="example.jpg" alt="Figure example">
+        <figcaption>This is a caption for the image</figcaption>
+    </figure>
+</div>
+
+<!-- 5. Line Breaks and Horizontal Rules -->
+<div class="section">
+    <h2>Line Breaks and Horizontal Rules</h2>
+
+    <!-- Line Break -->
+    <p>This text has a<br>line break in it.</p>
+
+    <!-- Horizontal Rule -->
+    <hr>
+</div>
+
+<!-- 6. Special Characters -->
+<div class="section">
+    <h2>Special Characters</h2>
+
+    <p>Copyright symbol: &copy;</p>
+    <p>Registered trademark: &reg;</p>
+    <p>Trademark: &trade;</p>
+    <p>Euro symbol: &euro;</p>
+    <p>Less than: &lt;</p>
+    <p>Greater than: &gt;</p>
+    <p>Ampersand: &amp;</p>
+    <p>Non-breaking space: &nbsp;</p>
+</div>
+
+<!-- 7. Quotations -->
+<div class="section">
+    <h2>Quotations</h2>
+
+    <!-- Blockquote -->
+    <blockquote cite="https://www.example.com">
+        <p>This is a longer quotation that gets its own block with citation.</p>
+        <footer>— <cite>Author Name</cite></footer>
+    </blockquote>
+
+    <!-- Inline Quote -->
+    <p>As someone said, <q>this is an inline quote</q>.</p>
+</div>
+
+<!-- 8. Time and Dates -->
+<div class="section">
+    <h2>Time and Dates</h2>
+
+    <p>The event starts at <time>20:00</time></p>
+    <p>The concert is on <time datetime="2025-08-15">August 15</time></p>
+    <p>The duration is <time datetime="PT2H30M">2 hours and 30 minutes</time></p>
+</div>
+
+<!-- 9. Best Practices -->
+<div class="section">
+    <h2>Best Practices</h2>
+
+    <!-- Semantic Usage -->
+    <article>
+        <h3>Using Semantic Elements</h3>
+        <p>Always use elements that best describe their content.</p>
+    </article>
+
+    <!-- Accessibility -->
+    <div role="complementary" aria-label="Quick tips">
+        <h3>Accessibility Considerations</h3>
+        <ul>
+            <li>Use proper heading hierarchy</li>
+            <li>Include alt text for images</li>
+            <li>Use semantic elements</li>
+            <li>Ensure proper color contrast</li>
+        </ul>
+    </div>
+
+    <!-- Performance -->
+    <div>
+        <h3>Performance Tips</h3>
+        <ul>
+            <li>Optimize images</li>
+            <li>Use appropriate image formats</li>
+            <li>Implement lazy loading where appropriate</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

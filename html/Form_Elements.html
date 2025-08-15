@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms Complete Guide</title>
+</head>
+<body>
+
+<!-- 1. Basic Form Structure -->
+<div class="section">
+    <h2>Basic Form Structure</h2>
+
+    <form action="/submit" method="post">
+        <!-- Basic input with label -->
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <!-- Input with placeholder -->
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" 
+                   placeholder="example@domain.com" required>
+        </div>
+
+        <!-- Form buttons -->
+        <div class="form-actions">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+
+<!-- 2. Input Types -->
+<div class="section">
+    <h2>Input Types</h2>
+
+    <form>
+        <!-- Text Inputs -->
+        <fieldset>
+            <legend>Text Inputs</legend>
+            
+            <div class="form-group">
+                <label for="text-input">Text:</label>
+                <input type="text" id="text-input" name="text-input">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="textarea">Text Area:</label>
+                <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Number Inputs -->
+        <fieldset>
+            <legend>Number Inputs</legend>
+
+            <div class="form-group">
+                <label for="number">Number:</label>
+                <input type="number" id="number" name="number" min="0" max="100" step="1">
+            </div>
+
+            <div class="form-group">
+                <label for="range">Range:</label>
+                <input type="range" id="range" name="range" min="0" max="100" step="10">
+            </div>
+        </fieldset>
+
+        <!-- Date and Time -->
+        <fieldset>
+            <legend>Date and Time</legend>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+            </div>
+
+            <div class="form-group">
+                <label for="datetime-local">DateTime:</label>
+                <input type="datetime-local" id="datetime-local" name="datetime-local">
+            </div>
+
+            <div class="form-group">
+                <label for="month">Month:</label>
+                <input type="month" id="month" name="month">
+            </div>
+
+            <div class="form-group">
+                <label for="week">Week:</label>
+                <input type="week" id="week" name="week">
+            </div>
+        </fieldset>
+
+        <!-- Selection Inputs -->
+        <fieldset>
+            <legend>Selection Inputs</legend>
+
+            <!-- Radio Buttons -->
+            <div class="form-group">
+                <p>Choose gender:</p>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="form-group">
+                <p>Select hobbies:</p>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="reading" name="hobbies[]" value="reading">
+                    <label for="reading">Reading</label>
+
+                    <input type="checkbox" id="gaming" name="hobbies[]" value="gaming">
+                    <label for="gaming">Gaming</label>
+
+                    <input type="checkbox" id="traveling" name="hobbies[]" value="traveling">
+                    <label for="traveling">Traveling</label>
+                </div>
+            </div>
+
+            <!-- Select Dropdown -->
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Select a country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <optgroup label="Europe">
+                        <option value="fr">France</option>
+                        <option value="de">Germany</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <!-- Multiple Select -->
+            <div class="form-group">
+                <label for="languages">Languages (hold Ctrl/Cmd to select multiple):</label>
+                <select id="languages" name="languages[]" multiple size="4">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                    <option value="php">PHP</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Special Inputs -->
+        <fieldset>
+            <legend>Special Inputs</legend>
+
+            <div class="form-group">
+                <label for="color">Color:</label>
+                <input type="color" id="color" name="color">
+            </div>
+
+            <div class="form-group">
+                <label for="file">File Upload:</label>
+                <input type="file" id="file" name="file" accept="image/*" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="search">Search:</label>
+                <input type="search" id="search" name="search">
+            </div>
+
+            <div class="form-group">
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url" placeholder="https://example.com">
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<!-- 3. Form Validation -->
+<div class="section">
+    <h2>Form Validation</h2>
+
+    <form id="validation-form" novalidate>
+        <!-- Required Fields -->
+        <div class="form-group">
+            <label for="required-field">Required Field:</label>
+            <input type="text" id="required-field" name="required-field" required>
+        </div>
+
+        <!-- Pattern Matching -->
+        <div class="form-group">
+            <label for="pattern-field">Pattern (numbers only):</label>
+            <input type="text" id="pattern-field" name="pattern-field" 
+                   pattern="[0-9]+" title="Numbers only">
+        </div>
+
+        <!-- Length Constraints -->
+        <div class="form-group">
+            <label for="length-field">Username (3-20 characters):</label>
+            <input type="text" id="length-field" name="length-field" 
+                   minlength="3" maxlength="20">
+        </div>
+
+        <!-- Range Constraints -->
+        <div class="form-group">
+            <label for="range-field">Age (18-100):</label>
+            <input type="number" id="range-field" name="range-field" 
+                   min="18" max="100">
+        </div>
+    </form>
+</div>
+
+<!-- 4. Advanced Form Features -->
+<div class="section">
+    <h2>Advanced Form Features</h2>
+
+    <!-- Autocomplete -->
+    <form autocomplete="on">
+        <div class="form-group">
+            <label for="auto-name">Name:</label>
+            <input type="text" id="auto-name" name="auto-name" autocomplete="name">
+        </div>
+
+        <div class="form-group">
+            <label for="auto-email">Email:</label>
+            <input type="email" id="auto-email" name="auto-email" autocomplete="email">
+        </div>
+    </form>
+
+    <!-- Datalist -->
+    <form>
+        <div class="form-group">
+            <label for="browser">Choose your browser:</label>
+            <input list="browsers" id="browser" name="browser">
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+            </datalist>
+        </div>
+    </form>
+
+    <!-- Output Element -->
+    <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+        <input type="number" id="a" name="a" value="0"> +
+        <input type="number" id="b" name="b" value="0"> =
+        <output name="result" for="a b">0</output>
+    </form>
+</div>
+
+<!-- 5. Accessibility Features -->
+<div class="section">
+    <h2>Accessibility Features</h2>
+
+    <form>
+        <!-- ARIA Labels -->
+        <div class="form-group">
+            <label id="aria-label">Search:</label>
+            <input type="search" aria-labelledby="aria-label">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" aria-describedby="pwd-help">
+            <div id="pwd-help">Password must be at least 8 characters</div>
+        </div>
+
+        <!-- Error Messages -->
+        <div class="form-group">
+            <label for="error-field">Username:</label>
+            <input type="text" id="error-field" aria-invalid="true">
+            <div role="alert">This field is required</div>
+        </div>
+    </form>
+</div>
+
+<!-- 6. Form Layouts -->
+<div class="section">
+    <h2>Form Layouts</h2>
+
+    <!-- Inline Form -->
+    <form class="inline-form">
+        <label for="inline-name">Name:</label>
+        <input type="text" id="inline-name">
+        <label for="inline-email">Email:</label>
+        <input type="email" id="inline-email">
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Grid Form -->
+    <form class="grid-form">
+        <div class="form-row">
+            <div class="form-col">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name">
+            </div>
+            <div class="form-col">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name">
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- 7. Best Practices -->
+<div class="section">
+    <h2>Form Best Practices</h2>
+
+    <!-- Labels and Inputs -->
+    <ul>
+        <li>Always use labels with form controls</li>
+        <li>Use appropriate input types</li>
+        <li>Include proper validation</li>
+        <li>Add helpful placeholder text</li>
+        <li>Provide clear error messages</li>
+        <li>Group related fields with fieldset</li>
+        <li>Use proper tab order</li>
+        <li>Include proper ARIA attributes</li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* CSS Grid Complete Guide
+ * This file demonstrates all Grid properties and common patterns
+ */
+
+/* 1. Grid Container Properties
+-------------------------------------------- */
+
+.grid-container {
+    /* Basic Setup */
+    display: grid;  /* or inline-grid */
+
+    /* Define Columns */
+    grid-template-columns: 200px 200px 200px;         /* Fixed width */
+    /* grid-template-columns: 1fr 1fr 1fr;           /* Fractional units */
+    /* grid-template-columns: repeat(3, 1fr);        /* Repeat syntax */
+    /* grid-template-columns: minmax(100px, 1fr);    /* Responsive columns */
+    /* grid-template-columns: auto 1fr auto;         /* Mixed units */
+
+    /* Define Rows */
+    grid-template-rows: 100px auto 100px;            /* Fixed and auto heights */
+    /* grid-template-rows: repeat(3, minmax(100px, auto)); /* Minimum height rows */
+
+    /* Grid Areas */
+    grid-template-areas: 
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+
+    /* Grid Gaps */
+    gap: 20px;                  /* Equal gaps */
+    /* row-gap: 20px;          /* Row-specific gap */
+    /* column-gap: 20px;       /* Column-specific gap */
+
+    /* Alignment Properties */
+    /* Align Grid Items (Column Axis) */
+    align-items: start;         /* Top of cell */
+    /* align-items: end;       /* Bottom of cell */
+    /* align-items: center;    /* Center of cell */
+    /* align-items: stretch;   /* Fill cell height */
+
+    /* Justify Grid Items (Row Axis) */
+    justify-items: start;       /* Left of cell */
+    /* justify-items: end;     /* Right of cell */
+    /* justify-items: center;  /* Center of cell */
+    /* justify-items: stretch; /* Fill cell width */
+
+    /* Align Grid Tracks */
+    align-content: start;       /* Top of container */
+    /* align-content: end;     /* Bottom of container */
+    /* align-content: center;  /* Center of container */
+    /* align-content: stretch; /* Fill container height */
+    /* align-content: space-between; /* Equal space between */
+    /* align-content: space-around;  /* Equal space around */
+
+    /* Justify Grid Tracks */
+    justify-content: start;     /* Left of container */
+    /* justify-content: end;   /* Right of container */
+    /* justify-content: center; /* Center of container */
+    /* justify-content: stretch; /* Fill container width */
+    /* justify-content: space-between; /* Equal space between */
+    /* justify-content: space-around;  /* Equal space around */
+}
+
+/* 2. Grid Item Properties
+-------------------------------------------- */
+
+.grid-item {
+    /* Grid Lines Placement */
+    grid-column: 1 / 3;        /* Start at line 1, end at line 3 */
+    /* grid-column: 1 / span 2; /* Start at line 1, span 2 columns */
+    /* grid-column: 2 / -1;    /* Start at line 2, end at last line */
+
+    grid-row: 1 / 3;          /* Start at line 1, end at line 3 */
+    /* grid-row: 1 / span 2;  /* Start at line 1, span 2 rows */
+    /* grid-row: 2 / -1;      /* Start at line 2, end at last line */
+
+    /* Shorthand for grid-column and grid-row */
+    grid-area: 1 / 1 / 3 / 3;  /* row-start/column-start/row-end/column-end */
+    /* grid-area: header;      /* Named grid area */
+
+    /* Self Alignment */
+    justify-self: start;       /* Left of cell */
+    /* justify-self: end;     /* Right of cell */
+    /* justify-self: center;  /* Center of cell */
+    /* justify-self: stretch; /* Fill cell width */
+
+    align-self: start;        /* Top of cell */
+    /* align-self: end;      /* Bottom of cell */
+    /* align-self: center;   /* Center of cell */
+    /* align-self: stretch;  /* Fill cell height */
+}
+
+/* 3. Common Grid Patterns
+-------------------------------------------- */
+
+/* Holy Grail Layout */
+.holy-grail {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "nav main aside"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.holy-grail > header { grid-area: header; }
+.holy-grail > nav { grid-area: nav; }
+.holy-grail > main { grid-area: main; }
+.holy-grail > aside { grid-area: aside; }
+.holy-grail > footer { grid-area: footer; }
+
+/* Card Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Magazine Layout */
+.magazine-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+
+.feature {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+}
+
+/* 4. Responsive Grid Patterns
+-------------------------------------------- */
+
+/* Basic Responsive Grid */
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Responsive with Named Areas */
+.responsive-layout {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+    grid-template-columns: 1fr 300px;
+}
+
+@media (max-width: 768px) {
+    .responsive-layout {
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 5. Advanced Grid Techniques
+-------------------------------------------- */
+
+/* Auto-flow Dense */
+.dense-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-auto-flow: dense;
+    gap: 10px;
+}
+
+/* Masonry-like Layout */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 20px;
+    grid-auto-flow: dense;
+}
+
+.masonry-item {
+    grid-row: span attr(data-height);
+}
+
+/* Overlapping Items */
+.overlap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+}
+
+.overlap-item {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    z-index: 1;
+}
+
+/* 6. Grid with Animation
+-------------------------------------------- */
+
+.animated-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.animated-item {
+    transition: transform 0.3s ease;
+}
+
+.animated-item:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/* 7. Best Practices
+-------------------------------------------- */
+
+/* Grid Container Reset */
+.grid-reset {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: none;
+    grid-template-areas: none;
+    gap: 0;
+}
+
+/* Fallback for Old Browsers */
+.fallback {
+    display: block; /* Fallback */
+}
+
+@supports (display: grid) {
+    .fallback {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Example HTML Reference:
+
+<div class="holy-grail">
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main Content</main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+</div>
+
+<div class="card-grid">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+    <div class="card">Card 4</div>
+</div>
+
+<div class="magazine-layout">
+    <article class="feature">Featured Article</article>
+    <article>Regular Article 1</article>
+    <article>Regular Article 2</article>
+    <article>Regular Article 3</article>
+</div>
+
+*/
+
+/* 8. Common Mistakes and Solutions
+-------------------------------------------- */
+
+/* Problem: Grid items not filling container */
+.fill-container {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    /* Instead of auto-fit with large minmax value */
+}
+
+/* Problem: Unwanted gaps */
+.no-gaps {
+    gap: 0;
+    margin: 0;  /* Remove default margins */
+}
+
+/* Problem: Items overlapping */
+.prevent-overlap {
+    grid-auto-flow: row dense;  /* Help prevent unwanted overlaps */
+}
+
+/* 9. Performance Considerations
+-------------------------------------------- */
+
+/* Use transform for animations instead of grid properties */
+.grid-animation {
+    transform: translateX(100px);
+    /* Instead of changing grid-template-columns */
+}
+
+/* Avoid frequent grid layout changes */
+.dynamic-grid {
+    /* Use CSS custom properties for dynamic changes */
+    --columns: 3;
+    grid-template-columns: repeat(var(--columns), 1fr);
+}

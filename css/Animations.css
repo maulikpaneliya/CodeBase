@@ -1,0 +1,314 @@
+/* CSS Animations and Transitions Guide
+ * This file demonstrates all animation and transition properties and patterns
+ */
+
+/* 1. Transitions
+-------------------------------------------- */
+
+/* Basic Transition */
+.basic-transition {
+    /* Individual Properties */
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+
+    /* Shorthand */
+    transition: all 0.3s ease 0s;
+}
+
+/* Multiple Transitions */
+.multiple-transitions {
+    transition: 
+        background-color 0.3s ease,
+        transform 0.5s ease-in-out,
+        opacity 0.2s linear;
+}
+
+/* Common Transition Properties */
+.transition-properties {
+    /* Colors */
+    transition: background-color 0.3s, color 0.3s;
+
+    /* Dimensions */
+    transition: width 0.5s, height 0.5s;
+
+    /* Transform */
+    transition: transform 0.3s;
+
+    /* Opacity */
+    transition: opacity 0.2s;
+}
+
+/* Timing Functions */
+.timing-functions {
+    /* Predefined Functions */
+    transition-timing-function: ease;        /* Default */
+    /* transition-timing-function: linear;   /* Constant speed */
+    /* transition-timing-function: ease-in;  /* Start slow */
+    /* transition-timing-function: ease-out; /* End slow */
+    /* transition-timing-function: ease-in-out; /* Start and end slow */
+
+    /* Custom Cubic Bezier */
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 2. Keyframe Animations
+-------------------------------------------- */
+
+/* Basic Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Multiple Steps Animation */
+@keyframes rainbow {
+    0% { background-color: red; }
+    25% { background-color: yellow; }
+    50% { background-color: blue; }
+    75% { background-color: green; }
+    100% { background-color: red; }
+}
+
+.color-change {
+    animation: rainbow 5s infinite;
+}
+
+/* Animation Properties */
+.animation-properties {
+    /* Individual Properties */
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+
+    /* Shorthand */
+    animation: slideIn 1s ease-out 0s 1 normal forwards;
+}
+
+/* Multiple Animations */
+.multiple-animations {
+    animation: 
+        slideIn 1s ease-out,
+        fadeIn 2s ease-in;
+}
+
+/* 3. Transform Animations
+-------------------------------------------- */
+
+/* 2D Transforms */
+.transform-2d {
+    /* Translation */
+    transform: translateX(20px) translateY(20px);
+    /* transform: translate(20px, 20px); /* Shorthand */
+
+    /* Scaling */
+    transform: scaleX(1.2) scaleY(1.2);
+    /* transform: scale(1.2); /* Shorthand */
+
+    /* Rotation */
+    transform: rotate(45deg);
+
+    /* Skewing */
+    transform: skewX(10deg) skewY(10deg);
+    /* transform: skew(10deg, 10deg); /* Shorthand */
+}
+
+/* 3D Transforms */
+.transform-3d {
+    /* Perspective */
+    perspective: 1000px;
+
+    /* 3D Rotation */
+    transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+
+    /* 3D Translation */
+    transform: translateZ(100px);
+    /* transform: translate3d(x, y, z); /* Shorthand */
+
+    /* 3D Scaling */
+    transform: scale3d(1.2, 1.2, 1.2);
+}
+
+/* 4. Common Animation Patterns
+-------------------------------------------- */
+
+/* Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Bounce */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+/* Pulse */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 1s infinite;
+}
+
+/* Shake */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+/* 5. Advanced Techniques
+-------------------------------------------- */
+
+/* Loading Spinner */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Parallax Effect */
+.parallax {
+    transform: translateZ(0);
+    transition: transform 0.3s;
+}
+
+/* Hover Effects */
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* 6. Performance Optimization
+-------------------------------------------- */
+
+/* Hardware Acceleration */
+.hardware-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+}
+
+/* Reduce Repaints */
+.efficient-animation {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}
+
+/* 7. Responsive Animations
+-------------------------------------------- */
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .motion-sensitive {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Screen Size Based Animations */
+@media (max-width: 768px) {
+    .responsive-animation {
+        animation-duration: 0.5s;
+        /* Simpler animation for mobile */
+    }
+}
+
+/* 8. Best Practices
+-------------------------------------------- */
+
+/* Animation Reset */
+.animation-reset {
+    animation: none;
+    transform: none;
+}
+
+/* Smooth Performance */
+.smooth-performance {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Example HTML Reference:
+
+<div class="fade-in">Fades in on load</div>
+
+<button class="hover-effect">
+    Hover to transform
+</button>
+
+<div class="spinner">
+    Loading...
+</div>
+
+<div class="parallax">
+    Parallax content
+</div>
+
+*/
+
+/* 9. Common Mistakes and Solutions
+-------------------------------------------- */
+
+/* Problem: Jerky Animations */
+.smooth-animation {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Problem: Animation Flicker */
+.no-flicker {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Problem: Animation Performance */
+.performance-optimized {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+}

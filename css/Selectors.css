@@ -1,0 +1,272 @@
+/* CSS Selectors Guide
+ * This file demonstrates all major types of CSS selectors with examples
+ */
+
+/* 1. Basic Selectors
+-------------------------------------------- */
+
+/* Element Selector */
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Class Selector */
+.highlight {
+    background-color: yellow;
+    padding: 2px 5px;
+}
+
+/* ID Selector */
+#header {
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+/* Universal Selector */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Combinators
+-------------------------------------------- */
+
+/* Descendant Selector (space) */
+article p {
+    margin-bottom: 15px;
+}
+
+/* Child Selector (>) */
+nav > ul {
+    display: flex;
+    list-style: none;
+}
+
+/* Adjacent Sibling Selector (+) */
+h2 + p {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* General Sibling Selector (~) */
+h2 ~ p {
+    color: #666;
+}
+
+/* 3. Attribute Selectors
+-------------------------------------------- */
+
+/* Basic Attribute Selector */
+[type] {
+    border: 1px solid #ddd;
+}
+
+/* Exact Attribute Value */
+[type="text"] {
+    padding: 5px 10px;
+}
+
+/* Attribute Starts With */
+[class^="btn-"] {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+/* Attribute Ends With */
+[href$=".pdf"] {
+    background: url('pdf-icon.png') no-repeat;
+    padding-left: 20px;
+}
+
+/* Attribute Contains */
+[title*="image"] {
+    border: 2px solid #ccc;
+}
+
+/* 4. Pseudo-classes
+-------------------------------------------- */
+
+/* Link States */
+a:link {
+    color: #0066cc;
+}
+
+a:visited {
+    color: #551A8B;
+}
+
+a:hover {
+    color: #003366;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ff0000;
+}
+
+/* Form States */
+input:focus {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+input:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+input:required {
+    border-left: 3px solid #ff0000;
+}
+
+/* Structural Pseudo-classes */
+li:first-child {
+    font-weight: bold;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+li:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* 5. Pseudo-elements
+-------------------------------------------- */
+
+/* First Letter */
+p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* First Line */
+p::first-line {
+    font-style: italic;
+}
+
+/* Before and After */
+.quote::before {
+    content: "\"";
+    font-size: 1.5em;
+}
+
+.quote::after {
+    content: "\"";
+    font-size: 1.5em;
+}
+
+/* Selection */
+::selection {
+    background-color: #ffeb3b;
+    color: #000;
+}
+
+/* 6. Complex Selectors
+-------------------------------------------- */
+
+/* Combining Multiple Selectors */
+.article h2.title,
+.article h3.subtitle {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+/* Nested Attribute Selectors */
+input[type="text"][disabled] {
+    background-color: #eee;
+}
+
+/* Complex Structural Selection */
+.grid-container > div:nth-child(3n+1) {
+    clear: left;
+}
+
+/* 7. Specificity Examples
+-------------------------------------------- */
+
+/* Specificity: 0-0-1 */
+p {
+    color: blue;
+}
+
+/* Specificity: 0-1-0 */
+.text {
+    color: red;
+}
+
+/* Specificity: 1-0-0 */
+#unique {
+    color: green;
+}
+
+/* Specificity: 0-2-0 */
+.header.dark {
+    color: purple;
+}
+
+/* 8. Best Practices
+-------------------------------------------- */
+
+/* Reusable Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* State Classes */
+.is-active { font-weight: bold; }
+.is-hidden { display: none; }
+.is-disabled { opacity: 0.5; }
+
+/* Component Classes */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn--primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn--secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Example HTML Reference:
+
+<div class="container">
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#" class="is-active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article class="article">
+        <h2 class="title">Article Title</h2>
+        <p class="highlight">Important paragraph</p>
+        <p>Regular paragraph</p>
+        <p class="quote">Famous quote</p>
+    </article>
+
+    <form>
+        <input type="text" required>
+        <input type="text" disabled>
+        <button class="btn btn--primary">Submit</button>
+    </form>
+</div>
+
+*/

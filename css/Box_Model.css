@@ -1,0 +1,267 @@
+/* CSS Box Model Guide
+ * This file demonstrates the CSS Box Model and its properties
+ */
+
+/* 1. Box Model Basics
+-------------------------------------------- */
+
+/* Basic Box Model Example */
+.box-model-example {
+    /* Content area */
+    width: 200px;
+    height: 100px;
+    
+    /* Padding */
+    padding: 20px;
+    
+    /* Border */
+    border: 2px solid #333;
+    
+    /* Margin */
+    margin: 30px;
+    
+    /* Visual helpers */
+    background-color: #f0f0f0;
+}
+
+/* 2. Box Sizing
+-------------------------------------------- */
+
+/* Default Box Sizing (content-box) */
+.content-box {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+    /* Total width = 200px + 40px(padding) + 4px(border) = 244px */
+}
+
+/* Border Box */
+.border-box {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+    /* Total width = 200px (includes padding and border) */
+}
+
+/* Global Border Box Reset */
+* {
+    box-sizing: border-box;
+}
+
+/* 3. Margin Properties
+-------------------------------------------- */
+
+/* Individual Margins */
+.margin-examples {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+/* Margin Shorthand */
+.margin-shorthand {
+    /* All sides */
+    margin: 10px;
+    
+    /* vertical | horizontal */
+    margin: 10px 20px;
+    
+    /* top | horizontal | bottom */
+    margin: 10px 20px 15px;
+    
+    /* top | right | bottom | left */
+    margin: 10px 20px 15px 25px;
+}
+
+/* Auto Margins (for centering) */
+.center-block {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+/* Margin Collapse Example */
+.margin-collapse {
+    /* These margins will collapse */
+    margin-bottom: 20px;
+}
+.margin-collapse + .margin-collapse {
+    margin-top: 20px;
+    /* Actual space between elements will be 20px, not 40px */
+}
+
+/* 4. Padding Properties
+-------------------------------------------- */
+
+/* Individual Padding */
+.padding-examples {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+/* Padding Shorthand */
+.padding-shorthand {
+    /* All sides */
+    padding: 10px;
+    
+    /* vertical | horizontal */
+    padding: 10px 20px;
+    
+    /* top | horizontal | bottom */
+    padding: 10px 20px 15px;
+    
+    /* top | right | bottom | left */
+    padding: 10px 20px 15px 25px;
+}
+
+/* 5. Border Properties
+-------------------------------------------- */
+
+/* Border Style */
+.border-styles {
+    /* Basic border */
+    border: 1px solid #000;
+    
+    /* Individual sides */
+    border-top: 2px dashed #333;
+    border-right: 2px dotted #333;
+    border-bottom: 2px solid #333;
+    border-left: 2px double #333;
+}
+
+/* Border Width */
+.border-widths {
+    border-width: thin;        /* typically 1px */
+    border-width: medium;      /* typically 3px */
+    border-width: thick;       /* typically 5px */
+    border-width: 10px;        /* explicit values */
+}
+
+/* Border Color */
+.border-colors {
+    border-color: #333;        /* solid color */
+    border-color: transparent; /* transparent border */
+    /* Individual sides */
+    border-top-color: #f00;
+    border-right-color: #0f0;
+    border-bottom-color: #00f;
+    border-left-color: #ff0;
+}
+
+/* Border Radius */
+.border-radius {
+    /* Equal corners */
+    border-radius: 5px;
+    
+    /* Individual corners */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 40px;
+    
+    /* Elliptical corners */
+    border-radius: 10px 20px;  /* horizontal | vertical */
+}
+
+/* 6. Practical Examples
+-------------------------------------------- */
+
+/* Card Component */
+.card {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+}
+
+/* Image Container */
+.image-container {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* 7. Common Patterns
+-------------------------------------------- */
+
+/* Fixed Width Container */
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Responsive Container */
+.container-fluid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grid Cell */
+.grid-cell {
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 5px;
+}
+
+/* 8. Best Practices
+-------------------------------------------- */
+
+/* Use consistent spacing */
+.consistent-spacing {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Maintain aspect ratio */
+.aspect-ratio {
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Example HTML Reference:
+
+<div class="container">
+    <div class="card">
+        <h2>Card Title</h2>
+        <p>Card content with consistent padding and margins.</p>
+        <button class="button">Click Me</button>
+    </div>
+    
+    <div class="image-container">
+        <img src="example.jpg" alt="Circular image">
+    </div>
+    
+    <div class="grid-cell">
+        Grid cell with consistent spacing
+    </div>
+</div>
+
+*/

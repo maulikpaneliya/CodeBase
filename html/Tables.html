@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables Complete Guide</title>
+</head>
+<body>
+
+<!-- 1. Basic Table Structure -->
+<div class="section">
+    <h2>Basic Table Structure</h2>
+
+    <table>
+        <caption>Simple Table Example</caption>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+    </table>
+
+    <!-- Table with thead, tbody, and tfoot -->
+    <table>
+        <caption>Table with Sections</caption>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Body 1</td>
+                <td>Body 2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Footer 1</td>
+                <td>Footer 2</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- 2. Table Headers -->
+<div class="section">
+    <h2>Table Headers</h2>
+
+    <!-- Column Headers -->
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>25</td>
+            <td>USA</td>
+        </tr>
+    </table>
+
+    <!-- Row Headers -->
+    <table>
+        <tr>
+            <th scope="row">Name</th>
+            <td>John Doe</td>
+        </tr>
+        <tr>
+            <th scope="row">Age</th>
+            <td>25</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 3. Spanning Cells -->
+<div class="section">
+    <h2>Spanning Cells</h2>
+
+    <!-- Column Span -->
+    <table>
+        <tr>
+            <th colspan="2">Personal Info</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+    </table>
+
+    <!-- Row Span -->
+    <table>
+        <tr>
+            <th>Category</th>
+            <td>Products</td>
+        </tr>
+        <tr>
+            <th rowspan="2">Electronics</th>
+            <td>Laptop</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+        </tr>
+    </table>
+
+    <!-- Complex Spanning -->
+    <table>
+        <tr>
+            <th colspan="2" rowspan="2">Complex Header</th>
+            <th>Header 3</th>
+        </tr>
+        <tr>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 4. Table Groups -->
+<div class="section">
+    <h2>Table Groups</h2>
+
+    <table>
+        <colgroup>
+            <col style="background-color: #f0f0f0">
+            <col span="2">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 5. Complex Tables -->
+<div class="section">
+    <h2>Complex Tables</h2>
+
+    <!-- Nested Tables -->
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>Nested Table</td>
+                    </tr>
+                </table>
+            </td>
+            <td>Regular Cell</td>
+        </tr>
+    </table>
+
+    <!-- Multi-level Headers -->
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Category</th>
+                <th colspan="2">Sales</th>
+            </tr>
+            <tr>
+                <th>Q1</th>
+                <th>Q2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Electronics</td>
+                <td>$100</td>
+                <td>$200</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 6. Responsive Tables -->
+<div class="section">
+    <h2>Responsive Tables</h2>
+
+    <!-- Horizontal Scroll -->
+    <div style="overflow-x: auto;">
+        <table>
+            <!-- Large table content -->
+        </table>
+    </div>
+
+    <!-- Data Label Pattern -->
+    <table class="responsive">
+        <tr>
+            <th>Name</th>
+            <td data-label="Name">John Doe</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td data-label="Age">25</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 7. Accessibility Features -->
+<div class="section">
+    <h2>Accessibility Features</h2>
+
+    <table>
+        <!-- Caption -->
+        <caption>Monthly Budget</caption>
+
+        <!-- Scope Attribute -->
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Amount</th>
+        </tr>
+
+        <!-- Headers Attribute -->
+        <tr>
+            <th id="item1">Rent</th>
+            <td headers="item1">$1000</td>
+        </tr>
+
+        <!-- Summary -->
+        <tr>
+            <th scope="row">Total</th>
+            <td>$1000</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 8. Table Patterns -->
+<div class="section">
+    <h2>Table Patterns</h2>
+
+    <!-- Data Table -->
+    <table>
+        <caption>Employee Directory</caption>
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>John Doe</td>
+                <td>IT</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Calendar Table -->
+    <table>
+        <caption>October 2025</caption>
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+            <!-- Additional rows -->
+        </tbody>
+    </table>
+
+    <!-- Comparison Table -->
+    <table>
+        <caption>Product Comparison</caption>
+        <thead>
+            <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Basic</th>
+                <th scope="col">Pro</th>
+                <th scope="col">Enterprise</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Price</th>
+                <td>$10</td>
+                <td>$20</td>
+                <td>$30</td>
+            </tr>
+            <!-- Additional features -->
+        </tbody>
+    </table>
+</div>
+
+<!-- 9. Best Practices -->
+<div class="section">
+    <h2>Table Best Practices</h2>
+
+    <ul>
+        <li>Use tables for tabular data only</li>
+        <li>Include proper table sections (thead, tbody, tfoot)</li>
+        <li>Use appropriate scope attributes</li>
+        <li>Add captions for context</li>
+        <li>Consider responsive design</li>
+        <li>Maintain proper heading hierarchy</li>
+        <li>Include proper ARIA attributes when needed</li>
+        <li>Use semantic markup</li>
+    </ul>
+</div>
+
+</body>
+</html>

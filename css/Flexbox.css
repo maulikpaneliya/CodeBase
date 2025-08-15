@@ -1,0 +1,315 @@
+/* CSS Flexbox Complete Guide
+ * This file demonstrates all Flexbox properties and common patterns
+ */
+
+/* 1. Flex Container Properties
+-------------------------------------------- */
+
+.flex-container {
+    /* Basic setup */
+    display: flex;  /* or inline-flex */
+
+    /* Direction Properties */
+    flex-direction: row;            /* default - left to right */
+    /* flex-direction: row-reverse; /* right to left */
+    /* flex-direction: column;      /* top to bottom */
+    /* flex-direction: column-reverse; /* bottom to top */
+
+    /* Wrapping Properties */
+    flex-wrap: nowrap;       /* default - single line */
+    /* flex-wrap: wrap;      /* multiple lines */
+    /* flex-wrap: wrap-reverse; /* multiple lines reverse */
+
+    /* Combined Shorthand */
+    flex-flow: row nowrap;   /* direction wrap */
+
+    /* Main Axis Alignment (justify-content) */
+    justify-content: flex-start;    /* default */
+    /* justify-content: flex-end;   /* pack items to end */
+    /* justify-content: center;     /* center items */
+    /* justify-content: space-between; /* equal space between */
+    /* justify-content: space-around;  /* equal space around */
+    /* justify-content: space-evenly;  /* equal space all sides */
+
+    /* Cross Axis Alignment (align-items) */
+    align-items: stretch;        /* default - fill container */
+    /* align-items: flex-start; /* items start at top */
+    /* align-items: flex-end;   /* items end at bottom */
+    /* align-items: center;     /* items center vertically */
+    /* align-items: baseline;   /* align by text baseline */
+
+    /* Multi-line Alignment (align-content) */
+    align-content: stretch;         /* default */
+    /* align-content: flex-start;  /* lines pack to start */
+    /* align-content: flex-end;    /* lines pack to end */
+    /* align-content: center;      /* lines pack to center */
+    /* align-content: space-between; /* equal space between */
+    /* align-content: space-around;  /* equal space around */
+
+    /* Gap Between Items */
+    gap: 10px;                /* equal gap */
+    /* row-gap: 10px;        /* gap between rows */
+    /* column-gap: 20px;     /* gap between columns */
+}
+
+/* 2. Flex Item Properties
+-------------------------------------------- */
+
+.flex-item {
+    /* Order Property */
+    order: 0;                /* default order (can be negative) */
+
+    /* Flex Grow */
+    flex-grow: 0;           /* default - don't grow */
+    /* flex-grow: 1;        /* grow in proportion */
+
+    /* Flex Shrink */
+    flex-shrink: 1;         /* default - can shrink */
+    /* flex-shrink: 0;      /* don't shrink */
+
+    /* Flex Basis */
+    flex-basis: auto;       /* default - use item's size */
+    /* flex-basis: 200px;   /* specific width */
+    /* flex-basis: 0;       /* grow from zero size */
+
+    /* Flex Shorthand */
+    flex: 0 1 auto;        /* default (grow shrink basis) */
+    /* flex: 1;            /* same as 1 1 0% */
+    /* flex: auto;         /* same as 1 1 auto */
+    /* flex: none;         /* same as 0 0 auto */
+
+    /* Self Alignment */
+    align-self: auto;          /* default - follow container */
+    /* align-self: flex-start; /* align to start */
+    /* align-self: flex-end;   /* align to end */
+    /* align-self: center;     /* center this item */
+    /* align-self: stretch;    /* stretch to fill */
+    /* align-self: baseline;   /* align to text baseline */
+}
+
+/* 3. Common Flexbox Patterns
+-------------------------------------------- */
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Card Layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 0 1 300px;  /* don't grow, can shrink, 300px basis */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;  /* take up remaining space */
+}
+
+/* Holy Grail Layout with Flexbox */
+.holy-grail {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.holy-grail-header,
+.holy-grail-footer {
+    flex: 0 0 auto;
+}
+
+.holy-grail-body {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.holy-grail-content {
+    flex: 1 0 auto;
+}
+
+.holy-grail-nav,
+.holy-grail-ads {
+    flex: 0 0 200px;
+}
+
+/* 4. Responsive Patterns
+-------------------------------------------- */
+
+/* Responsive Grid */
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;  /* Compensate for item margins */
+}
+
+.flex-grid-item {
+    flex: 1 1 300px;  /* Grow, shrink, 300px basis */
+    margin: 10px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 5. Advanced Patterns
+-------------------------------------------- */
+
+/* Equal Height Columns */
+.equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equal-height > div {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Masonry-like Layout */
+.masonry {
+    display: flex;
+    flex-flow: column wrap;
+    height: 1000px;  /* Fixed height required */
+    gap: 10px;
+}
+
+.masonry-item {
+    flex: 0 0 auto;
+    width: calc(33.333% - 10px);
+}
+
+/* Sticky Footer */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+/* 6. Best Practices
+-------------------------------------------- */
+
+/* Flex Container Reset */
+.flex-reset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+/* Flex Item Reset */
+.flex-item-reset {
+    order: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+}
+
+/* Example HTML Reference:
+
+<nav class="navbar">
+    <div class="logo">Logo</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="card-container">
+    <div class="card">
+        <img src="image.jpg" alt="Card image">
+        <div class="card-body">
+            <h3>Card Title</h3>
+            <p>Card content goes here...</p>
+        </div>
+        <footer class="card-footer">Card Footer</footer>
+    </div>
+</div>
+
+<div class="holy-grail">
+    <header class="holy-grail-header">Header</header>
+    <div class="holy-grail-body">
+        <nav class="holy-grail-nav">Nav</nav>
+        <main class="holy-grail-content">Main Content</main>
+        <aside class="holy-grail-ads">Aside</aside>
+    </div>
+    <footer class="holy-grail-footer">Footer</footer>
+</div>
+
+*/
+
+/* 7. Common Mistakes and Solutions
+-------------------------------------------- */
+
+/* Problem: Items not wrapping properly */
+.proper-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* Set min-width on items to control wrapping */
+}
+
+/* Problem: Items not growing equally */
+.equal-growth > * {
+    flex: 1;  /* All items grow equally */
+}
+
+/* Problem: Items overflow container */
+.prevent-overflow {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;  /* Prevent flex items from overflowing */
+}
+
+/* 8. Performance Considerations
+-------------------------------------------- */
+
+/* Use transform instead of flex for animations */
+.performant-animation {
+    transform: translateX(100px);
+    /* Instead of changing flex-basis or order */
+}
+
+/* Avoid changing flex-direction frequently */
+@media (max-width: 768px) {
+    .responsive-layout {
+        /* Use visibility/display instead of changing flex-direction */
+        visibility: hidden;
+        display: none;
+    }
+}
