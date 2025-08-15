@@ -1,6 +1,5 @@
 // Helper.go
 // A collection of reusable helper functions for Go projects.
-
 package main
 
 import (
